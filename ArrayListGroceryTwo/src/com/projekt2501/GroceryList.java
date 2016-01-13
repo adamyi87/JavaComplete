@@ -44,11 +44,19 @@ public class GroceryList {
         groceryList.set((number-1), item);
         System.out.println("Item #" + number + " has been replaced with " + item);
     }
-
-    public void removeList(){
+    public void removeList(int number){
+        groceryList.remove(number-1);
+        System.out.println("Item: " + (number) + " has been removed.");
+    }
+    public void findItem(String item){
+        if(findItemOnList(item) >= 0){
+            System.out.println("The item " + item + " was found on #" + groceryList.indexOf(item+1));
+        }
+        else{
+            System.out.println("The item was not on the list.");
+        }
 
     }
-
     private int findItemOnList(String item){
         for(int i=0; i<groceryList.size(); i++){
             if(groceryList.get(i).toLowerCase().equals(item.toLowerCase())){

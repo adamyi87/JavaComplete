@@ -28,8 +28,10 @@ public class Main {
                     modifyItem();
                     break;
                 case 4:
+                    removeItem();
                     break;
                 case 5:
+                    findItem();
                     break;
                 case 0:
                     System.out.println("Exiting program");
@@ -43,7 +45,7 @@ public class Main {
 
     }
 
-    //#region METHODS
+    //region METHODS
     public static void printItem(){
         myList.printList();
     }
@@ -69,8 +71,22 @@ public class Main {
         }
     }
     public static void removeItem(){
+<<<<<<< HEAD
 
+=======
+        myList.printList();
+        System.out.println("Please choose (number) you wish to remove from the list.");
+        keyboard.nextLine();
+        int number = keyboard.nextInt();
+        myList.removeList(number);
     }
-    //#endregion
+    public static void findItem(){
+        System.out.println("Type the item you wish to search for.");
+        keyboard.nextLine();
+        String item = keyboard.nextLine();
+        myList.findItem(item);
+>>>>>>> b52739eaaea1315af390cf16ebb50960f2b8e480
+    }
+    //endregion
 
 }
