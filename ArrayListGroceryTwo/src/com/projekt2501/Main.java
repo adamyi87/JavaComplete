@@ -71,6 +71,9 @@ public class Main {
         }
     }
     public static void removeItem(){
+<<<<<<< HEAD
+
+=======
         myList.printList();
         System.out.println("Please choose (number) you wish to remove from the list.");
         keyboard.nextLine();
@@ -82,6 +85,7 @@ public class Main {
         keyboard.nextLine();
         String item = keyboard.nextLine();
         myList.findItem(item);
+>>>>>>> b52739eaaea1315af390cf16ebb50960f2b8e480
     }
     //endregion
 
