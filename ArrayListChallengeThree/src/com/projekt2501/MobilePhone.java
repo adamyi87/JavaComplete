@@ -3,31 +3,36 @@ package com.projekt2501;
 import java.util.ArrayList;
 
 /**
- * Created by adam on 1/25/2016.
+ * Created by ay-sam on 1/25/16.
  */
 public class MobilePhone {
     private String number;
     private ArrayList<Contact> myContacts;
+
     public String getNumber(){
         return this.number;
     }
-
     //CONSTRUCTOR
     public MobilePhone(String number){
         this.number = number;
         this.myContacts = new ArrayList<Contact>();
     }
 
-    //PUBLIC METHODS =====================================================================================
+    //PUBLIC METHODS
     // Add Contacts
     public boolean addContact(Contact contact){
-        if(findContact(contact) < 0){
+        if(myContacts.size() == 0){
             myContacts.add(contact);
             return true;
         }
         else{
-            System.out.println(contact.getName() + " already in your contacts.");
-            return false;
+            if(findContact(contact.getName()) >= 0){
+                return false;
+            }
+            else{
+                myContacts.add(contact);
+                return true;
+            }
         }
     }
     // Update Contacts
@@ -35,11 +40,11 @@ public class MobilePhone {
         int position = findContact(oldContact);
         if(position >= 0){
             myContacts.set(position, newContact);
-            System.out.println(oldContact.getName() + " has been replaced with " + newContact.getName());
+            System.out.println(oldContact.getName() + " has been replaced by " + newContact.getName());
             return true;
         }
         else{
-            System.out.println(oldContact.getName() + " not found.");
+            System.out.println(oldContact.getName() + " does not exist in Contacts.");
             return false;
         }
     }
@@ -52,33 +57,35 @@ public class MobilePhone {
             return true;
         }
         else{
-            System.out.println(contact.getName() + " cannot be found in your Contacts.");
+            System.out.println(contact.getName() + " does not exist in Contacts.");
             return false;
         }
     }
     // Find Contacts
-    public String queryContact(Contact contact){
-        if(findContact(contact) >= 0){
-            return contact.getName();
+    public boolean queryContact(String name){
+        int position = findContact(name);
+        if(position >= 0){
+            System.out.println("'" + name + "'" + " has been found in Contact #" + (position+1));
+            return true;
         }
         else{
-            return null;
+            System.out.println(name + " can not be found in Contacts.");
+            return false;
         }
     }
     // Print Contacts
     public void printContacts(){
         if(myContacts.size() == 0){
-            System.out.println("No contacts registered on the phone.");
+            System.out.println("Contacts is empty.");
         }
         else{
             for(int i=0; i<myContacts.size(); i++){
-                System.out.println((i+1) + ". Name: " + myContacts.get(i).getName() + "\n" +
-                        "   Phone number: " + myContacts.get(i).getNumber());
+                System.out.println((i+1) + ": " + myContacts.get(i).getName() +
+                    " || Number: " + myContacts.get(i).getNumber());
             }
         }
     }
-
-    //PRIVATE METHODS =====================================================================================
+    //PRIVATE METHODS
     private int findContact(Contact contact){
         return myContacts.indexOf(contact);
     }

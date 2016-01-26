@@ -1,7 +1,7 @@
 package com.projekt2501;
 
 /**
- * Created by adam on 1/25/2016.
+ * Created by ay-sam on 1/25/16.
  */
 public class Contact {
     private String name;
@@ -20,7 +20,7 @@ public class Contact {
         this.number = number;
     }
 
-    //METHODS
+    //PUBLIC METHODS
     public static Contact createNewContact(String name, String number){
         return new Contact(name, number);
     }

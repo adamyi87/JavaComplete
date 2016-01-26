@@ -5,7 +5,6 @@ public class Main {
     private static MobilePhone myPhone = new MobilePhone("832 866 7482");
     public static void main(String[] args) {
 
-
         boolean quit = false;
         do{
             System.out.println("=============== Available actions =============");
@@ -29,7 +28,7 @@ public class Main {
                 case 4:
                     break;
                 case 5:
-                    break;w
+                    break;
                 case 6:
                     break;
                 case 0:
@@ -51,7 +50,7 @@ public class Main {
         System.out.println("Enter the number.");
         String number = keyboard.nextLine();
         Contact newContact = Contact.createNewContact(name, number);
-        if(myPhone.addNewContacts(newContact)){
+        if(myPhone.addContact(newContact)){
             System.out.println(name + " has been added to your Contacts.");
         }
         else{
