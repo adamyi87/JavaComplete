@@ -1,26 +1,26 @@
 package com.projekt2501;
 
 /**
- * Created by adam on 1/9/2016.
+ * Created by ay-sam on 1/18/16.
  */
 public class Contact {
     private String name;
     private String number;
 
     public String getName(){
-        return this.name;
+        return name;
     }
     public String getNumber(){
-        return this.number;
+        return number;
     }
-    //CONSTRUCTOR
+
     public Contact(String name, String number){
         this.name = name;
         this.number = number;
     }
 
-    //METHODS
     public static Contact createNewContact(String name, String number){
         return new Contact(name, number);
     }
+
 }
