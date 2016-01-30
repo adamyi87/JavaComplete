@@ -62,7 +62,8 @@ public class Main {
     }
 
     private static void updateContacts(){
-
+        myPhone.printContacts();
+        System.out.println("");
     }
 
     private static void removeContacts(){

@@ -82,7 +82,7 @@ public class MobilePhone {
     }
     private int findContact(String name){
         for(int i=0; i<myContact.size(); i++){
-            if(myContact.get(i).getName().toLowerCase().equals(name.toLowerCase())){
+            if(myContact.get(i).getName().equalsIgnoreCase(name)){
                 return i;
             }
         }
