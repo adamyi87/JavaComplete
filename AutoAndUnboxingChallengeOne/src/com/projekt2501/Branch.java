@@ -11,6 +11,9 @@ public class Branch {
     public String getName(){
         return this.name;
     }
+    public ArrayList<Customer> getMyCustomers(){
+        return this.myCustomers;
+    }
     //CONSTRUCTOR
     public Branch(String name){
         this.name = name;
